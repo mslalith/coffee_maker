@@ -7,9 +7,9 @@ class CoffeeProvider extends ChangeNotifier {
   CoffeeState _state = CoffeeState.selectSize;
   CoffeeState get state => _state;
 
-  double size = 0.0;
   CoffeeSize _coffeeSize = CoffeeSize.XS;
   CoffeeSize get coffeeSize => _coffeeSize;
+  double get coffeeSizeIndex => CoffeeSize.values.indexOf(_coffeeSize).toDouble();
   String get coffeeSizeText =>_coffeeSize.toString().split('.')[1];
 
   double _foam = 0.0;
@@ -22,7 +22,6 @@ class CoffeeProvider extends ChangeNotifier {
     if (_state == CoffeeState.selectSize) return;
 
     _title = 'Select Size';
-    size = 0.0;
     _state = CoffeeState.selectSize;
     notifyListeners();
   }
@@ -36,19 +35,19 @@ class CoffeeProvider extends ChangeNotifier {
   }
 
   void updateCoffeeSize(double value) {
-    if ((size - value).abs() != 1) return;
+    double oldIndex = coffeeSizeIndex;
+    if ((oldIndex - value).abs() != 1) return;
 
-    size = value;
     CoffeeSize coffeeSize;
-    if (size >= 4.0)
+    if (value >= 4.0)
       coffeeSize = CoffeeSize.XL;
-    else if (size >= 3.0)
+    else if (value >= 3.0)
       coffeeSize = CoffeeSize.L;
-    else if (size >= 2.0)
+    else if (value >= 2.0)
       coffeeSize = CoffeeSize.M;
-    else if (size >= 1.0)
+    else if (value >= 1.0)
       coffeeSize = CoffeeSize.S;
-    else if (size >= 0.0) coffeeSize = CoffeeSize.XS;
+    else if (value >= 0.0) coffeeSize = CoffeeSize.XS;
 
     _coffeeSize = coffeeSize;
     notifyListeners();
