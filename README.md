@@ -3,7 +3,7 @@
 This interface is designed by Gal Shir from Dribbble.<br>
 [https://dribbble.com/shots/2508230-Coffee-Maker-App](https://dribbble.com/shots/2508230-Coffee-Maker-App)
 
-This is created as a Flutter Web project, so you can play around with the design and help me find bugs.
+This is created as a Flutter Web project, so you can play around with the design and help me find bugs.<br>
 [https://mslalith.github.io/coffee_maker/](https://mslalith.github.io/coffee_maker/ "Coffee Maker")
 
 ## Packages:
