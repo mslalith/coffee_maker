@@ -8,8 +8,9 @@ class VerticalSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<CoffeeProvider>(
       builder: (_, provider, child) {
-        final value =
-            provider.isInSelectSizeState ? provider.size : provider.foam;
+        final value = provider.isInSelectSizeState
+            ? CoffeeSize.values.indexOf(provider.coffeeSize)
+            : provider.foam;
         return Container(
           padding: const EdgeInsets.symmetric(vertical: 36.0),
           child: FlutterSlider(

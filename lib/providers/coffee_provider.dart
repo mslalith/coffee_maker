@@ -8,7 +8,7 @@ class CoffeeProvider extends ChangeNotifier {
   CoffeeState get state => _state;
 
   double size = 0.0;
-  CoffeeSize _coffeeSize = CoffeeSize.S;
+  CoffeeSize _coffeeSize = CoffeeSize.XS;
   CoffeeSize get coffeeSize => _coffeeSize;
   String get coffeeSizeText =>_coffeeSize.toString().split('.')[1];
 
