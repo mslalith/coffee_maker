@@ -39,6 +39,12 @@ class _TitleTextState extends State<_TitleText>
       duration: const Duration(milliseconds: 300),
     )..addListener(() => setState(() {}));
   }
+  
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   void didUpdateWidget(_TitleText oldWidget) {
