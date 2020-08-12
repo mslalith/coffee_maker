@@ -44,6 +44,12 @@ class __CoffeeCupState extends State<_CoffeeCup>
       duration: const Duration(milliseconds: 120),
     )..addListener(() => setState(() {}));
   }
+  
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   void didUpdateWidget(_CoffeeCup oldWidget) {
