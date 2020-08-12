@@ -47,6 +47,12 @@ class _CoffeeSizeIndicatorState extends State<_CoffeeSizeIndicator>
         }
       });
   }
+  
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   void didUpdateWidget(_CoffeeSizeIndicator oldWidget) {
